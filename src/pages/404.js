@@ -2,6 +2,7 @@ import * as React from "react";
 import { Link } from "gatsby";
 import { LinkOverlay } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
+import Layout from "../components/Layout";
 
 // styles
 const pageStyles = {
@@ -18,12 +19,14 @@ const headingStyles = {
 // markup
 const NotFoundPage = () => {
   return (
+    <Layout>
     <main style={pageStyles}>
       <title>Not found</title>
       <h1 style={headingStyles}>Page not found</h1>
       <Image src="/404.jpg" alt="Page not found illustration" />
       <Link to="/"><LinkOverlay>Go home</LinkOverlay></Link>
     </main>
+    </Layout>
   );
 };
 
