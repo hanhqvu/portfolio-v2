@@ -7,7 +7,7 @@ export default function Layout({ children }) {
       <header>
         <Nav />
       </header>
-      <div className="content">{children}</div>
+      <main className="content">{children}</main>
       <footer>
         <p>Copyright 2022 Hanh Vu</p>
       </footer>
