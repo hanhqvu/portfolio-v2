@@ -25,7 +25,7 @@ const ThemeIcon = () => {
 };
 
 const Navbar = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { toggleColorMode } = useColorMode();
   return (
     <Box
       position="fixed"
