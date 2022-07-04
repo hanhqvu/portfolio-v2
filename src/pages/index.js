@@ -1,6 +1,7 @@
 import * as React from "react";
 import Layout from "../components/Layout";
 import Bio from "../components/Bio";
+import About from "../components/About";
 import { 
   Container,
   Heading,
@@ -24,6 +25,7 @@ const IndexPage = () => {
           textDecoration="underline"
           textDecorationColor="purple.600"
         >About</Heading>
+        <About/>
         <Heading 
           as="h1"
           textDecoration="underline"
