@@ -17,7 +17,7 @@ function About() {
         <SimpleGrid 
             columns={{
                 base: 1,
-                md: 2,
+                lg: 2,
             }}
             spacing={10}
         >
@@ -30,7 +30,8 @@ function About() {
 
                         However, I wasn't interested in programming
                         or think that it would be something I can do.
-                        It started out as writing simple automation scripts in Excel
+                        Nevertheless, life has other plan for me.
+                        My passion for programming started out as writing simple automation scripts in Excel
                         and blossomed into enrolling at my current bootcamp.<br/><br/>
 
                         I love learning about new technologies and
