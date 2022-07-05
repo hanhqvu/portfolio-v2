@@ -18,13 +18,13 @@ const IndexPage = () => {
   return (
     <Layout>
       <Container
-        pt="2em"
+        pt={{base: "4em", md: "2em"}}
         pb="2em"
         maxW="container.lg"
       >
         <Hero/>
         <Heading 
-          as="h1"
+          as="h2"
           textDecoration="underline"
           textDecorationColor="purple.600"
           paddingTop="1em"
@@ -32,7 +32,7 @@ const IndexPage = () => {
         >About</Heading>
         <About/>
         <Heading 
-          as="h1"
+          as="h2"
           textDecoration="underline"
           textDecorationColor="purple.600"
           paddingTop="1em"
@@ -40,7 +40,7 @@ const IndexPage = () => {
         >Bio</Heading>
         <Bio/>
         <Heading 
-          as="h1"
+          as="h2"
           textDecoration="underline"
           textDecorationColor="purple.600"
           paddingTop="1em"
