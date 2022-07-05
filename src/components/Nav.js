@@ -20,8 +20,8 @@ import { HamburgerIcon, SunIcon, MoonIcon } from "@chakra-ui/icons";
 import { AiFillGithub } from "react-icons/ai";
 
 const ThemeIcon = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
-  return colorMode === "light" ? <MoonIcon /> : <SunIcon />;
+  const { colorMode } = useColorMode();
+  return colorMode === "light" ? <MoonIcon/>: <SunIcon/>;
 };
 
 const Navbar = () => {
@@ -39,7 +39,7 @@ const Navbar = () => {
       <Container
         display="flex"
         p={2}
-        maxW="container.md"
+        maxW="container.lg"
         wrap="wrap"
         align="center"
         justify="space-between"
@@ -52,8 +52,8 @@ const Navbar = () => {
 
         <Stack
           direction={{ base: "column", md: "row" }}
-          display={{ base: "none", md: "flex" }}
-          width={{ base: "full", md: "auto" }}
+          display={{ base: "none", lg: "flex" }}
+          width={{ base: "full", lg: "auto" }}
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
           justifyContent="flex-end"
@@ -93,33 +93,75 @@ const Navbar = () => {
             leftIcon={<AiFillGithub />}
             as={Link}
           >
-            <GatsbyLink>Source</GatsbyLink>
+            <Link>Source</Link>
           </Button>
-          <Button onClick={toggleColorMode}>
+          <Button
+            onClick={toggleColorMode}
+            bg={useColorModeValue("gray.600","orange.600")}
+              color={useColorModeValue("white", "black")}
+              _hover={{
+                bg: useColorModeValue("gray.400","orange.400"),
+                color: useColorModeValue("black", "white")
+              }}
+          >
             <ThemeIcon />
           </Button>
         </Stack>
 
         <Box flex={1} align="right">
-          <Box mr={2} display={{ base: "inline-block", md: "none" }}>
-            <Button onClick={toggleColorMode} mr={2}>
+          <Box mr={2} display={{ base: "inline-block", lg: "none" }}>
+            <Button 
+              onClick={toggleColorMode}
+              bg={useColorModeValue("gray.600","orange.600")}
+              color={useColorModeValue("white", "black")}
+              _hover={{
+                bg: useColorModeValue("gray.400","orange.400"),
+                color: useColorModeValue("black", "white")
+              }}
+              mr={2}
+            >
               <ThemeIcon />
             </Button>
             <Menu isLazy id="navbar-menu">
               <MenuButton
+                p={2}
                 as={IconButton}
                 icon={<HamburgerIcon />}
                 variant="outline"
                 aria-label="Options"
+                bg="purple.600"
+                color="white"
+                _hover={{
+                  bg: "purple.300",
+                  color: "black",
+                }}
               />
               <MenuList>
                 <GatsbyLink to="/" passHref>
-                  <MenuItem as={Link}>Home</MenuItem>
+                  <MenuItem
+                    as={Link}
+                    _hover={{
+                      bg: "purple.600",
+                      color: "white",
+                    }}  
+                  >Home</MenuItem>
                 </GatsbyLink>
                 <GatsbyLink to="/projects" passHref>
-                  <MenuItem as={Link}>Projects</MenuItem>
+                  <MenuItem
+                    as={Link}
+                    _hover={{
+                      bg: "purple.600",
+                      color: "white",
+                    }}  
+                  >Projects</MenuItem>
                 </GatsbyLink>
-                <MenuItem>Source</MenuItem>
+                <MenuItem
+                    as={Link}
+                    _hover={{
+                      bg: "purple.600",
+                      color: "white",
+                    }}
+                >Source</MenuItem>
               </MenuList>
             </Menu>
           </Box>
