@@ -93,7 +93,7 @@ const Navbar = () => {
             leftIcon={<AiFillGithub />}
             as={Link}
           >
-            <Link>Source</Link>
+            <Link href="https://github.com/hanhqvu/portfolio-v2">Source</Link>
           </Button>
           <Button
             onClick={toggleColorMode}
@@ -156,6 +156,7 @@ const Navbar = () => {
                   >Projects</MenuItem>
                 </GatsbyLink>
                 <MenuItem
+                    href="https://github.com/hanhqvu/portfolio-v2"
                     as={Link}
                     _hover={{
                       bg: "purple.600",
