@@ -2,6 +2,7 @@ import * as React from "react";
 import Layout from "../components/Layout";
 import Bio from "../components/Bio";
 import About from "../components/About";
+import Hero from "../components/Hero";
 import { 
   Container,
   Heading,
@@ -17,25 +18,33 @@ const IndexPage = () => {
   return (
     <Layout>
       <Container
-        pt="60px"
+        pt="2em"
+        pb="2em"
         maxW="container.lg"
       >
+        <Hero/>
         <Heading 
           as="h1"
           textDecoration="underline"
           textDecorationColor="purple.600"
+          paddingTop="1em"
+          paddingBottom="1em"
         >About</Heading>
         <About/>
         <Heading 
           as="h1"
           textDecoration="underline"
           textDecorationColor="purple.600"
+          paddingTop="1em"
+          paddingBottom="1em"
         >Bio</Heading>
         <Bio/>
         <Heading 
           as="h1"
           textDecoration="underline"
           textDecorationColor="purple.600"
+          paddingTop="1em"
+          paddingBottom="1em"
         >Find me at</Heading>
         <Box>
         <VStack
@@ -69,7 +78,6 @@ const IndexPage = () => {
         </VStack>
         </Box>
       </Container>
-      
     </Layout>
   );
 };
