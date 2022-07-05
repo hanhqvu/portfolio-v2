@@ -1,14 +1,14 @@
 import * as React from "react"
 import styled from "styled-components";
-import { Box, VStack } from "@chakra-ui/react";
+import { Box, VStack, Show } from "@chakra-ui/react";
 import { ArrowDownIcon } from "@chakra-ui/icons";
 
-const TypeText = styled.h1`
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid purple; /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
+const TypeText = styled.p`
+    overflow: hidden;
+    border-right: .15em solid purple;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
     animation: 
         typing 3s steps(50, end),
         blink-caret .5s step-end ;
@@ -21,7 +21,7 @@ const TypeText = styled.h1`
     @keyframes blink-caret {
         from, to { border-color: transparent }
         30% { border-color: purple; }
-      }
+    }
 `
 const FadeText = styled.p`
     -webkit-animation: 4s ease 0s normal forwards 1 fadein;
@@ -51,7 +51,7 @@ export default function Hero() {
                 lg: "-webkit-fit-content"
             }}
             height={{
-                base: "30vh",
+                base: "50vh",
                 md: "50vh",
                 lg: "70vh"
             }}
@@ -60,21 +60,20 @@ export default function Hero() {
         >
             <Box
                 fontSize={{
-                    base: "xl",
-                    md: "2xl",
+                    base: "2xl",
+                    md: "3xl",
                     lg: "4xl"
                 }}
-                maxW="lg"
+                maxW="100%"
             >
                 <TypeText>
-                Hi! I'm Hanh Vu, an aspiring developer
+                Hi! I'm Hanh Vu, <Show below="sm"><br/></Show> an aspiring developer
                 </TypeText>
             </Box>
             <Box
                 fontSize={{
                     base: "md",
-                    md: "lg",
-                    lg: "xl"
+                    md: "xl",
                 }}
                 maxW="md"
             >
