@@ -1,43 +1,91 @@
 import * as React from "react";
 import {
     Box,
-    Flex,
     Text,
+    Center,
+    Image,
+    SimpleGrid,
+    List,
+    ListIcon,
+    ListItem
 } from "@chakra-ui/react"
-import styled from "styled-components";
-
-const TypeText = styled.p`
-    font-size: 2rem;
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid purple; /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
-    animation: 
-        typing 3.5s steps(50, end),
-        blink-caret .75s step-end ;
-
-    @keyframes typing {
-        from { width: 0 }
-        to { width: 70% }
-    }
-
-    @keyframes blink-caret {
-        from, to { border-color: transparent }
-        30% { border-color: purple; }
-      }
-`
+import { SiReact, SiGatsby, SiJavascript, SiGraphql, SiPostgresql, SiStyledcomponents } from "react-icons/si"
 
 function About() {
   return (
-    <Flex
-        justifyContent="center"
-        alignContent="left"
-    >
-        <TypeText>
-        Hi! I'm Hanh Vu, an aspiring developer
-        </TypeText>
-    </Flex>
+    <>
+        <SimpleGrid 
+            columns={{
+                base: 1,
+                md: 2,
+            }}
+            spacing={10}
+        >
+            <Box w="100%">
+                <Box>
+                    <Text>
+                        Hello again! You alrealy now my name and you can address me as Hanh.
+                        I have always been interested in tech,
+                        especially how people make the cool tools and apps I use everyday.<br/><br/>
+
+                        However, I wasn't interested in programming
+                        or think that it would be something I can do.
+                        It started out as writing simple automation scripts in Excel
+                        and blossomed into enrolling at my current bootcamp.<br/><br/>
+
+                        I love learning about new technologies and
+                        putting it into practice with my experiments.
+                        Below are some of the technologies I'm familiar with
+                        but I'm always ready to learn and grow.<br/><br/>
+                    </Text>
+                    <SimpleGrid columns="2">
+                        <Box>
+                            <List spacing={2}>
+                                <ListItem>
+                                    <ListIcon as={SiReact} color="#61dafb"/>
+                                    React
+                                </ListItem>
+                                <ListItem>
+                                    <ListIcon as={SiGatsby} color="#663399"/>
+                                    Gatsby
+                                </ListItem>
+                                <ListItem>
+                                    <ListIcon as={SiJavascript} color="#F0DB4F"/>
+                                    Javascript
+                                </ListItem>
+                            </List>
+                        </Box>
+                        <Box>
+                        <List spacing={2}>
+                                <ListItem>
+                                    <ListIcon as={SiGraphql} color="#E10098"/>
+                                    GraphQL
+                                </ListItem>
+                                <ListItem>
+                                    <ListIcon as={SiPostgresql} color="#336791"/>
+                                    PostgreSQL
+                                </ListItem>
+                                <ListItem>
+                                    <ListIcon as={SiStyledcomponents} color="pink.700"/>
+                                    Styled-components
+                                </ListItem>
+                            </List>
+                        </Box>
+                    </SimpleGrid>
+                    
+                </Box>
+            </Box>
+            <Center w="100%">
+                <Image
+                    src="/profile.jpeg"
+                    alt="Hanh Vu"
+                    h="20em"
+                    borderRadius="full"
+                    loading="lazy"
+                ></Image>
+            </Center>
+        </SimpleGrid>
+    </>
   )
 }
 
